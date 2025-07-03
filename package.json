@@ -100,7 +100,8 @@
     "cypress:run": "cypress run",
     "test:jest": "jest",
     "test:e2e": "start-server-and-test start http://localhost:4000 cypress:run",
-    "test": "npm run test:jest && npm run test:e2e"
+    "test": "npm run test:jest && npm run test:e2e",
+    "deploy": "gh-pages -d dist"
   },
   "eslintConfig": {
     "extends": [
