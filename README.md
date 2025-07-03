@@ -1,19 +1,56 @@
-# Проектная работа 11-го спринта
+# Stellar Burgers
 
-[Макет](<https://www.figma.com/file/vIywAvqfkOIRWGOkfOnReY/React-Fullstack_-Проектные-задачи-(3-месяца)_external_link?type=design&node-id=0-1&mode=design>)
+Приложение для сборки бургеров, оформления заказов и управления профилем. Поддерживает работу с WebSocket, авторизацию и историю заказов.
 
-[Чеклист](https://www.notion.so/praktikum/0527c10b723d4873aa75686bad54b32e?pvs=4)
+## Функции
 
-## Этапы работы:
+* Конструктор бургеров с drag-and-drop
+* Авторизация и восстановление пароля
+* Оформление и отслеживание заказов
+* Личный кабинет с историей заказов
 
-1. Разверните проект и ознакомьтесь с кодом. Все необходимые вам компоненты уже созданы и лежат в папке `src/components`
+## Стек
 
-2. Настройте роутинг.
+* React, TypeScript, Redux Toolkit
+* React Router v6, React DnD
+* WebSocket, Vite
+* Jest, Cypress
 
-3. Напишите функционал запросов данных с сервера, используя `Redux` и глобальный `store`. Сами "ручки" уже прописаны и лежат в `utils/burger-api.ts`
+## Установка
 
-4. Настройте авторизацию и создайте защищённые роуты.
+```bash
+git clone https://github.com/DarKingRD/stellar-burgers.git
+cd stellar-burgers
+npm install
+npm start
+```
 
-## Важно:
+## Сборка
 
-Для корректной работы запросов к серверу необходимо добавить переменную BURGER_API_URL в окружение. Сама ссылка находится в файле `.env.example`.
+```bash
+npm run build
+```
+
+## Тесты
+
+```bash
+npm test
+npm run cypress:open
+npm run storybook
+```
+
+## Структура
+
+```
+src/
+├── components/
+├── hooks/
+├── pages/
+├── services/
+├── store/
+├── styles/
+├── tests/
+└── utils/
+```
+
+[Сайт](https://Davmgiz.github.io/stellar-burgers/)
