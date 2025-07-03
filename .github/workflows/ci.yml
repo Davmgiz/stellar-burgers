@@ -1,0 +1,35 @@
+name: CI Dev Stage
+
+on:
+  push:
+    branches: [ main, review ]
+  pull_request:
+    branches: [ main, review ]
+
+jobs:
+  build_and_test:
+    name: Build and Test (Dev)
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Create .env file from .env.example
+        run: cp .env.example .env
+
+      - name: Run unit tests
+        run: npm test
